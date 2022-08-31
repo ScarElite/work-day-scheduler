@@ -1,7 +1,7 @@
 var currentDay = document.querySelector("#currentDay");
 
 // Display's the day and today's date
-var currentDate = moment().format("dddd, MMM do YYYY");
+var currentDate = moment().format("dddd, MMMM Do YYYY");
 currentDay.textContent = currentDate;
 
 $(document).ready(function () {
@@ -20,6 +20,7 @@ $(document).ready(function () {
         var currentTime = moment().hour();
         console.log(currentTime);
 
+        // the function will run for each time-block and add/remove the necessary classes so that the user has a visual to go along with the time-blocks to differentiate them from being in the past, present, or future
         $(".time-block").each(function () {
             var timeBlock = parseInt($(this).attr("id").split("hour")[1]);
 
@@ -40,7 +41,6 @@ $(document).ready(function () {
     }
 
     // Get item from localStorage if any
-    $("#hour8 .description").val(localStorage.getItem("hour8"));
     $("#hour9 .description").val(localStorage.getItem("hour9"));
     $("#hour10 .description").val(localStorage.getItem("hour10"));
     $("#hour11 .description").val(localStorage.getItem("hour11"));
