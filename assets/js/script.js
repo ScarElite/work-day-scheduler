@@ -12,18 +12,18 @@ $(document).ready(function () {
         var time = $(this).parent().attr("id");
 
         // Save the description the user input and the id of the time-block associated with that description to the localStorage
-        localStorage.setItem(description, time);
+        localStorage.setItem(time, description);
     })
 
     function timeTracker() {
         // Gets the current hour of the day
         var currentTime = moment().hour();
-        console.log(currentTime);
 
         // the function will run for each time-block and add/remove the necessary classes so that the user has a visual to go along with the time-blocks to differentiate them from being in the past, present, or future
         $(".time-block").each(function () {
             var timeBlock = parseInt($(this).attr("id").split("hour")[1]);
 
+            // Checks the time to add/remove the correct classes that show if the timeblock is in the past, present, or future
             if (timeBlock < currentTime) {
                 $(this).removeClass("future");
                 $(this).removeClass("present");
@@ -40,7 +40,7 @@ $(document).ready(function () {
         })
     }
 
-    // Get item from localStorage if any
+    // Gets the description the user put in the timeblocks if there is anything
     $("#hour9 .description").val(localStorage.getItem("hour9"));
     $("#hour10 .description").val(localStorage.getItem("hour10"));
     $("#hour11 .description").val(localStorage.getItem("hour11"));
