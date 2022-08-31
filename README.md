@@ -9,10 +9,10 @@ This website was created to provide you with a scheduler for your traditional 9a
 - JavaScript with jQuery
 
 ## Go to the website by clicking the link below!
-
+https://scarelite.github.io/work-day-scheduler/
 
 ## Here's a preview of the Work Day Scheduler!
-
+![](assets/images/work-day-scheduler-preview.PNG)
 
 ## Contribution:
 Made by Mitchell Armstrong
